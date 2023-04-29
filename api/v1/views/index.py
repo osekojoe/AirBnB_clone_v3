@@ -5,7 +5,7 @@
 from models import storage
 from flask import jsonify
 from api.v1.views import app_views
-from  models.amenity import Amenity
+from models.amenity import Amenity
 from models.city import City
 from models.state import State
 from models.place import Place
@@ -17,6 +17,7 @@ from models.review import Review
 def status():
     """ API status"""
     return jsonify({"status": "OK"})
+
 
 @app_views.route('/stats')
 def object_count():
