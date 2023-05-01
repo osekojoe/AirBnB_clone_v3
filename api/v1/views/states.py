@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-
+State - RESTFul API actions
 """
 
 
@@ -12,14 +12,14 @@ from flask import jsonify, make_response, request, abort
 
 @app_views.route('/states', methods=['GET'])
 def get_states():
-    """ """
+    """ GET """
     states = storage.all(State).values()
     return jsonify([state.to_dict() for state in states])
 
 
 @app_views.route('/states/<state_id>', methods=['GET'])
 def get_state(state_id):
-    """ """
+    """ GET """
     state = storage.get(State, state_id)
 
     if not state:
@@ -29,7 +29,7 @@ def get_state(state_id):
 
 @app_views.route('/states/<state_id>', methods=['DELETE'])
 def delete_state(state_id):
-    """ """
+    """ DELETE """
     state = storage.get(State, state_id)
 
     if not state:
@@ -43,7 +43,7 @@ def delete_state(state_id):
 
 @app_views.route('/states', methods=['POST'])
 def create_state():
-    """ """
+    """ POST """
     data = request.get_json()
 
     if not data():
@@ -61,7 +61,7 @@ def create_state():
 
 @app_views.route('/states/<state_id>', methods=['PUT'])
 def update_state(state_id):
-    """ """
+    """ PUT """
     state = storage.get(State, state_id)
     if not state:
         abort(404)
