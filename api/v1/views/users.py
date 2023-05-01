@@ -22,7 +22,7 @@ def get_users():
 
 @app_views.route('/users/<user_id>', methods=['GET'],
                  strict_slashes=False)
-def get_amenity(user_id):
+def get_user(user_id):
     """ """
     user = storage.get(User, user_id)
     if not user:
