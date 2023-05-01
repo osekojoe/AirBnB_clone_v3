@@ -86,6 +86,7 @@ def create_place(city_id):
 def update_place(place_id):
     """"""
     place = storage.get(Place, place_id)
+
     if not place:
         abort(404)
 
@@ -98,7 +99,6 @@ def update_place(place_id):
     for key, value in data.items():
         if key not in ignore_keys:
             setattr(place, key, value)
-
     storage.save()
 
     return make_response(jsonify(place.to_dict()), 200)
