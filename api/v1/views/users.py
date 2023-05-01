@@ -68,7 +68,7 @@ def create_user():
                  strict_slashes=False)
 def update_user(user_id):
     """"""
-    amenity = storage.get(User, user_id)
+    user = storage.get(User, user_id)
     if not user:
         abort(404)
 
