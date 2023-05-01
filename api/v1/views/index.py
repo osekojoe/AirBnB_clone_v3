@@ -23,7 +23,7 @@ def status():
 def object_count():
     """endpoint that retrieves the number of each objects by type"""
     classes = [Amenity, City, State, Place, User, Review]
-    titles = ['amenity', 'city', 'state', 'place', 'user', 'review']
+    titles = ['amenities', 'cities', 'states', 'places', 'users', 'reviews']
 
     obj_count = {}
     for i in range(len(classes)):
