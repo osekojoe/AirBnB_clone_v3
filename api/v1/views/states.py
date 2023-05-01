@@ -77,6 +77,6 @@ def update_state(state_id):
         if key not in ignore_keys:
             setattr(state, key, value)
 
-    state.save()
+    storage.save()
 
     return make_response(jsonify(state.to_dict()), 200)
