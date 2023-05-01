@@ -82,6 +82,6 @@ def update_user(user_id):
         if key not in ignore_keys:
             setattr(user, key, value)
 
-    user.save()
+    storage.save()
 
     return make_response(jsonify(user.to_dict()), 200)
