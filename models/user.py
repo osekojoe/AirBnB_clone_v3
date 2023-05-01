@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ holds class User"""
+
 import models
 from models.base_model import BaseModel, Base
 from os import getenv
@@ -30,7 +31,7 @@ class User(BaseModel, Base):
         super().__init__(*args, **kwargs)
 
     def __setattr__(self, name, value):
-        """hash password to  MD5 value"""
+        """sets a password with md5 encryption"""
         if name == "password":
             value = md5(value.encode()).hexdigest()
         super().__setattr__(name, value)
