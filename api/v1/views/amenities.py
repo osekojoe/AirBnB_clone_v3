@@ -77,7 +77,7 @@ def update_amenity(amenity_id):
 
     for key, value in data.items():
         if key not in ignore_keys:
-            setattr(city, key, value)
+            setattr(amenity, key, value)
 
     amenity.save()
 
