@@ -23,6 +23,7 @@ def page_not_found(error):
     """page not found error handling"""
     return make_response(jsonify({"error": "Not found"}), 404)
 
+
 if __name__ == "__main__":
     # Set the host, port using environ variables, or defaults if not defined
     host = os.environ.get('HBNB_API_HOST', '0.0.0.0')
