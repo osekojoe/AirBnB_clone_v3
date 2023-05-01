@@ -55,7 +55,7 @@ def create_state():
     if not name:
         abort(400, description="Missing name")
 
-    state = State(**name)
+    state = State(**data)
     state.save()
 
     return make_response(jsonify(state.to_dict()), 201)
